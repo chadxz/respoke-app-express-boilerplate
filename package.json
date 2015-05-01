@@ -1,0 +1,17 @@
+{
+  "name": "respoke-sample-app-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "bower install",
+    "lint": "jshint . && jscs ."
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}
