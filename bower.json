@@ -9,5 +9,9 @@
     "app/bower_components"
   ],
   "dependencies": {
+    "font-awesome": "~4.3.0",
+    "bootstrap-social": "~4.9.0",
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.4"
   }
 }

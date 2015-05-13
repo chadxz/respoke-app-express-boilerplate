@@ -56,6 +56,7 @@
   "validateIndentation": 2,
   "excludeFiles": [
     "public/bower_components/**",
-    "node_modules/**"
+    "node_modules/**",
+    "coverage/**"
   ]
 }
