@@ -1,0 +1,11 @@
+extends ./_layout.jade
+
+//- locals:
+  user: { _id, name, email }
+
+block content
+  h1 Welcome!
+  pre!= JSON.stringify(user, null, '\t')
+  a(href="/account") modify your account
+  span &nbsp;or&nbsp;
+  a(href="/logout") logout

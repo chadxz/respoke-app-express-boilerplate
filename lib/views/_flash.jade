@@ -1,0 +1,18 @@
+if messages.errors
+  .alert.alert-danger.alert-dismissable(role="alert")
+    button.close(type="button" data-dismiss="alert" aria-label="Close")
+      span(aria-hidden="true") &times;
+    for error in messages.errors
+      div= error.msg
+if messages.info
+  .alert.alert-info.alert-dismissable(role="alert")
+    button.close(type="button" data-dismiss="alert" aria-label="Close")
+      span(aria-hidden="true") &times;
+    for info in messages.info
+      div= info.msg
+if messages.success
+  .alert.alert-success.alert-dismissable(role="alert")
+    button.close(type="button" data-dismiss="alert" aria-label="Close")
+      span(aria-hidden="true") &times;
+    for success in messages.success
+      div= success.msg

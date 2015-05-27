@@ -1,0 +1,38 @@
+extends ../_layout
+
+block content
+  .row
+    .col-xs-12.text-center
+      h1 Login
+  .row
+    .col-sm-6
+      h2.text-center
+      if googleEnabled
+        a.btn.btn-block.btn-google.btn-social(href='/auth/google')
+          i.fa.fa-google-plus
+          | Sign in with Google
+      if twitterEnabled
+        a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+          i.fa.fa-twitter
+          | Sign in with Twitter
+      if githubEnabled
+        a.btn.btn-block.btn-github.btn-social(href='/auth/github')
+          i.fa.fa-github
+          | Sign in with GitHub
+      br
+    .col-sm-6
+      .panel.panel-default
+        h1
+        .panel-body
+          form(method="post" action="/login")
+            .form-group
+              label(for="email") Email Address
+              input#email.form-control(type="email" name="email" placeholder="me@here.com" required)
+            .form-group
+              label(for="password") Password
+              input#password.form-control(type="password" name="password" placeholder="********" required)
+            input(type="hidden" name="_csrf" value=_csrf)
+            input(type="hidden" name="returnTo" value=returnTo)
+            button.btn.btn-default(type="submit") Login
+            span &nbsp;or&nbsp;
+            a(href="/signup") create an account

@@ -1,0 +1,55 @@
+extends ../_layout
+
+block content
+
+  h1: <a href="/">Home</a> &raquo; Account Management
+  - var passwordAction = user.password ? 'Change': 'Set';
+  h2 Profile Information
+  .panel.panel-default
+    .panel-body
+      form(method="post" action="/account/profile")
+        .form-group
+          label(for="name") Name
+          input#name.form-control(type="text" name="name" placeholder="Gilligan" value="#{user.name || ''}" required)
+        .form-group
+          label(for="email") Email Address
+          input#email.form-control(type="email" name="email" placeholder="me@here.com" value="#{user.email || ''}" required)
+        input(type="hidden" name="_csrf" value=_csrf)
+        button.btn.btn-default(type="submit") Update Profile
+  h2 #{passwordAction} Password
+  .panel.panel-default
+    .panel-body
+      form(method="post" action="/account/password")
+        .form-group
+          label(for="password") Password
+          input#password.form-control(type="password" name="password" placeholder="********" required)
+        .form-group
+          label(for="confirmPassword") Confirm Password
+          input#confirmPassword.form-control(type="password" name="confirmPassword" placeholder="********" required)
+        input(type="hidden" name="_csrf" value=_csrf)
+        button.btn.btn-default(type="submit") #{passwordAction} Password
+  h2 Delete Account
+  .panel.panel-default
+    .panel-body
+      p You can delete your account, but keep in mind this action is irreversible.
+      form(action='/account/delete', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        button.btn.btn-danger(type='submit') Delete Account
+  h2 Linked Accounts
+  .panel.panel-default
+    .panel-body
+      if googleEnabled
+        if user.google
+          p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+        else
+          p: a(href='/auth/google') Link your Google account
+      if twitterEnabled
+        if user.twitter
+          p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
+        else
+          p: a(href='/auth/twitter') Link your Twitter account
+      if githubEnabled
+        if user.github
+          p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
+        else
+          p: a(href='/auth/github') Link your GitHub account

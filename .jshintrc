@@ -5,6 +5,10 @@
   "unused": true,
   "strict": true,
   "browser": true,
+  "mocha": true,
   "debug": true,
-  "newcap": false
+  "newcap": false,
+  "predef": [
+    "-Promise"
+  ]
 }
