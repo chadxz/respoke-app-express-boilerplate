@@ -1,11 +1,15 @@
 extends ../_layout
 
 block content
+  - var socialSignonAvailable = googleEnabled || twitterEnabled || githubEnabled;
+  - var socialLoginClassList = socialSignonAvailable ? 'col-sm-6': 'hidden';
+  - var localLoginClassList = socialSignonAvailable ? 'col-sm-6': 'col-sm-6 col-sm-offset-3';
+
   .row
     .col-xs-12.text-center
       h1 Login
   .row
-    .col-sm-6
+    div(class="#{socialLoginClassList}")
       h2.text-center
       if googleEnabled
         a.btn.btn-block.btn-google.btn-social(href='/auth/google')
@@ -20,7 +24,7 @@ block content
           i.fa.fa-github
           | Sign in with GitHub
       br
-    .col-sm-6
+    div(class="#{localLoginClassList}")
       .panel.panel-default
         h1
         .panel-body
