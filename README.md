@@ -17,7 +17,7 @@ some things this project does **not** have:
 
 ## getting started
 
- 1. `git clone https://github.com/chadxz/express-app-express-boilerplate.git --depth=1 your-app-name` to retrieve the repo
+ 1. `git clone https://github.com/chadxz/respoke-app-express-boilerplate.git --depth=1 your-app-name` to retrieve the repo
  with only the most recent history. This makes the clone quick!
  1. `cd your-app-name && rm -rf .git` to remove the repo history so you can start your repo fresh
  1. `npm install` to install the project dependencies
