@@ -7,12 +7,13 @@ repo intends to serve as a jumpstart for this scenario. Some features:
  - local account creation & management
  - social signon using twitter, github, and google
  - ability to associate existing account with social login methods
+ - ability to retrieve vanity details about other users that have signed up
 
 some things this project does **not** have:
 
  - no modules that require native addons, making it easy to get started on windows
  - no attempt to define look and feel
- - no advanced tools (transpilers, minifiers, bundlers, build tools). developer can add as needed!
+ - no advanced tools (transpilers, minifiers, bundlers, build tools). You can add any of these as needed!
  - no requirement of database backend, thanks to nedb database
 
 ## getting started
