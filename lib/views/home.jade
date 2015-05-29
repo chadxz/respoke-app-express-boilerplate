@@ -4,8 +4,17 @@ extends ./_layout.jade
   user: { _id, name, email }
 
 block content
+  - var metadata = { user: user, respoke: respoke };
   h1 Welcome!
-  pre!= JSON.stringify(user, null, '\t')
+  pre!= JSON.stringify(metadata, null, '  ')
   a(href="/account") modify your account
   span &nbsp;or&nbsp;
   a(href="/logout") logout
+  div#respokeStatus
+
+block script
+  script var config = { user: !{JSON.stringify(user)} };
+  if respoke
+    script config.respoke = !{JSON.stringify(respoke)};
+  script(src="bower_components/respoke/respoke.min.js")
+  script(src="app.js")

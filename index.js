@@ -21,14 +21,18 @@ var resources = {
 var appId = config.get('respoke.appId');
 var appSecret = config.get('respoke.appSecret');
 var baseURL = config.get('respoke.baseURL');
+var roleId = config.get('respoke.roleId');
+var ttl = config.get('respoke.tokenTTLSeconds');
 
-if (appId && appSecret) {
+if (appId && appSecret && baseURL && roleId && ttl) {
   resources.respoke = new RespokeService({
     client: new RespokeClient({
       baseURL: baseURL,
       appId: appId,
       'App-Secret': appSecret
-    })
+    }),
+    roleId: roleId,
+    ttl: ttl
   });
 } else {
   console.warn('Respoke not configured. Please copy config/default.js to config/local.js and ' +
