@@ -33,6 +33,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.11.2",
     "express-validator": "^2.10.0",
+    "gravatar": "^1.1.1",
     "jade": "^1.10.0",
     "lodash": "^3.8.0",
     "lusca": "^1.1.0",
