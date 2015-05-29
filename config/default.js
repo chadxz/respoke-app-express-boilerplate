@@ -23,5 +23,12 @@ module.exports = {
     enabled: false,
     consumerKey: '',
     consumerSecret: ''
+  },
+  respoke: {
+    baseURL: 'https://api.respoke.io/v1',
+    appId: '',
+    appSecret: '',
+    roleId: '',
+    tokenTTLSeconds: 86400 // optional, defaults to 1 day
   }
 };
