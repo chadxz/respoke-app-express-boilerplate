@@ -8,6 +8,7 @@ repo intends to serve as a jumpstart for this scenario. Some features:
  - social signon using twitter, github, and google
  - ability to associate existing account with social login methods
  - ability to retrieve vanity details about other users that have signed up
+ - ability to perform Respoke brokered authentication for a logged-in user
 
 some things this project does **not** have:
 
@@ -24,6 +25,15 @@ some things this project does **not** have:
  1. `npm install` to install the project dependencies
  1. change the project name in `package.json` and `bower.json`, to make the project your own
  1. `npm start` to start the server on http://localhost:8080
+
+## configuration for Respoke brokered auth
+
+Out of the box, this application will automatically retrieve a Respoke authentication token for you once
+logged in, and provides a route `/respoke/token` to refresh that authentication token if needed. To enable
+this functionality, you must provide the server with your Respoke `app id`, `app secret`, and a `roleId`
+to be used when requesting a token.
+
+When configured, the default logged-in page has an example of using this token to connect to Respoke.
 
 ## obtaining API keys
 
